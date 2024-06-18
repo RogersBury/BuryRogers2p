@@ -41,7 +41,8 @@ public class ActivityDos extends AppCompatActivity {
         siguienteBttn = findViewById(R.id.buttonSiguienteAct2);
         cerrarBttn = findViewById(R.id.buttonCerrarAct2);
 
-        desactivarEditText();
+
+        bloquearEditText();
 
         siguienteBttn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,13 +56,15 @@ public class ActivityDos extends AppCompatActivity {
                 String obtenerDivisor = divisorET.getText().toString();
                 String obtenerNumero = numeroET.getText().toString();
 
-                intent.putExtra("keyNombre", obtenerNombre);
-                intent.putExtra("keyApellido", obtenerApellido);
-                intent.putExtra("keyDividendo", obtenerDividendo);
-                intent.putExtra("keyDivisor", obtenerDivisor);
-                intent.putExtra("keyNumero", obtenerNumero);
+                intent.putExtra("Nombre", obtenerNombre);
+                intent.putExtra("Apellido", obtenerApellido);
+                intent.putExtra("Dividendo", obtenerDividendo);
+                intent.putExtra("Divisor", obtenerDivisor);
+                intent.putExtra("Numero", obtenerNumero);
 
                 startActivity(intent);
+
+                mostrarValores();
             }
         });
 
@@ -76,26 +79,34 @@ public class ActivityDos extends AppCompatActivity {
                 String obtenerDivisor = divisorET.getText().toString();
                 String obtenerNumero = numeroET.getText().toString();
 
-                // Verifica si los campos contienen datos
+
                 if (!obtenerNombre.isEmpty() || !obtenerApellido.isEmpty() || !obtenerDividendo.isEmpty() ||
                         !obtenerDivisor.isEmpty() || !obtenerNumero.isEmpty()) {
                     Intent intent = new Intent(ActivityDos.this, MainActivity.class);
                     String numeroInvertido = new StringBuilder(obtenerNumero).reverse().toString();
 
-                    intent.putExtra("keyName", obtenerNombre);
-                    intent.putExtra("keyLastName", obtenerApellido);
-                    intent.putExtra("keyDividendo", obtenerDividendo);
-                    intent.putExtra("keyDivisor", obtenerDivisor);
-                    intent.putExtra("keyNumeroInvertido", numeroInvertido);
+                    intent.putExtra("Nombre", obtenerNombre);
+                    intent.putExtra("Apellido", obtenerApellido);
+                    intent.putExtra("Dividendo", obtenerDividendo);
+                    intent.putExtra("Divisor", obtenerDivisor);
+                    intent.putExtra("NumeroInvertido", numeroInvertido);
+                    startActivity(intent);
                 }
             }
         });
     }
 
 
-    public void desactivarEditText(){
+    public void bloquearEditText(){
         dividendoET.setEnabled(false);
         divisorET.setEnabled(false);
         numeroET.setEnabled(false);
+    }
+
+
+    public void mostrarValores(){
+        Intent intent = new Intent();
+        String obtenerNombre = intent.getStringExtra("NombreAct3");
+        nombreET.setText(obtenerNombre);
     }
 }

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         siguienteBttn = findViewById(R.id.buttonsiguienteAct1);
         mostrarBttn = findViewById(R.id.buttonMostrarResAct1);
 
-        desactivarEditText();
+        bloquearEditText();
 
         siguienteBttn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 String obetenerNombre = nombreET.getText().toString();
                 String obtenerApellido = apellidoET.getText().toString();
 
-                intent.putExtra("keyName", obetenerNombre);
-                intent.putExtra("keyLastName", obtenerApellido);
+                intent.putExtra("Nombre", obetenerNombre);
+                intent.putExtra("Apellido", obtenerApellido);
 
                 startActivity(intent);
             }
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int dividendo = Integer.parseInt(dividendoET.getText().toString());
                 int divisorInt = Integer.parseInt(divisorET.getText().toString());
-                String numeroInvertido = getIntent().getStringExtra("keyNumInvertido");
+                String numeroInvertido = getIntent().getStringExtra("NumInvertido");
                 EditText editTextInvertido = findViewById(R.id.editTextNumInveAct1);
                 editTextInvertido.setText(numeroInvertido);
 
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void desactivarEditText(){
+    public void bloquearEditText(){
         nombreET.setEnabled(false);
         apellidoET.setEnabled(false);
         dividendoET.setEnabled(false);
