@@ -62,6 +62,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mostrarBttn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int dividendo = Integer.parseInt(dividendoET.getText().toString());
+                int divisorInt = Integer.parseInt(divisorET.getText().toString());
+                String numeroInvertido = getIntent().getStringExtra("keyNumInvertido");
+                EditText editTextInvertido = findViewById(R.id.editTextNumInveAct1);
+                editTextInvertido.setText(numeroInvertido);
+
+                int numEntero = 0;
+                int residuo = 0;
+
+                if (divisorInt != 0) {
+                    int signo = 1;
+
+                    if ((dividendo < 0 && divisorInt > 0) ||
+                            (dividendo > 0 && divisorInt < 0)) {
+                        signo = -1;
+                    }
+
+                    dividendo = Math.abs(dividendo);
+                    divisorInt = Math.abs(divisorInt);
+
+                    while (dividendo >= divisorInt) {
+                        dividendo -= divisorInt;
+                        numEntero++;
+                    }
+                    numEntero *= signo;
+                    residuo = dividendo;
+                }
+                parEnteraET.setText(String.valueOf(numEntero));
+                residuoET.setText(String.valueOf(residuo));
+            }
+
+        });
+
     }
 
     public void desactivarEditText(){
@@ -73,5 +110,6 @@ public class MainActivity extends AppCompatActivity {
         parEnteraET.setEnabled(false);
         residuoET.setEnabled(false);
     }
+
 
 }

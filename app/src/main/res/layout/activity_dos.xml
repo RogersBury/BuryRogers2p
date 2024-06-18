@@ -53,13 +53,13 @@
             android:id="@+id/buttonSiguienteAct2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Siguiente" />
 
         <Button
             android:id="@+id/buttonCerrarAct2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Cerrar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
