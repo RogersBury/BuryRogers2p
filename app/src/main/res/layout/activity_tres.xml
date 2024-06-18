@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".ActivityTres">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,75 +13,48 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextNombreAct1"
+            android:id="@+id/editTextNombreAct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextApellidoAct1"
+            android:id="@+id/editTextApellidoAct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Apellido"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextDividendoAct1"
+            android:id="@+id/editTextDividendoAct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:ems="10"
             android:hint="Dividendo"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextDivisorAct1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Dvisor"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextParteEnteAct1"
+            android:id="@+id/editTextDivisorAct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Parte Entera"
+            android:hint="Divisor"
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/editTextResiduoAct1"
+            android:id="@+id/editTextNumeroAct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Residuo"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/editTextNumInveAct1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Num. Invertido"
+            android:hint="Número"
             android:inputType="text" />
 
         <Button
-            android:id="@+id/buttonsiguienteAct1"
+            android:id="@+id/buttonCerrarAct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Siguiente" />
+            android:text="Button" />
 
-        <Button
-            android:id="@+id/buttonMostrarResAct1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mostrar resultados" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
