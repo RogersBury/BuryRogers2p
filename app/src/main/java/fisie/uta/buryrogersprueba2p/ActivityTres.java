@@ -54,20 +54,20 @@ public class ActivityTres extends AppCompatActivity {
         cerrarBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityTres.this, ActivityDos.class);
+                Intent intent1 = new Intent(ActivityTres.this, ActivityDos.class);
                 String obtenerNombre = nombreET.getText().toString();
                 String obtenerApellido = apellidoET.getText().toString();
                 String obtenerDividendo = dividendoET.getText().toString();
                 String obtenerDivisor = divisorET.getText().toString();
                 String obtenerNumero = numeroET.getText().toString();
 
-                intent.putExtra("NameAct3", obtenerNombre);
-                intent.putExtra("LastNameAct3", obtenerApellido);
-                intent.putExtra("DividendoAct3", obtenerDividendo);
-                intent.putExtra("DivisorAct3", obtenerDivisor);
-                intent.putExtra("NumeroInvertidoAct", obtenerNumero);
+                intent1.putExtra("NombreAct3", obtenerNombre);
+                intent1.putExtra("ApellidoAct3", obtenerApellido);
+                intent1.putExtra("DividendoAct3", obtenerDividendo);
+                intent1.putExtra("DivisorAct3", obtenerDivisor);
+                intent1.putExtra("NumeroInvertidoAct3", obtenerNumero);
 
-                startActivity(intent);
+                startActivity(intent1);
             }
         });
 
@@ -79,10 +79,10 @@ public class ActivityTres extends AppCompatActivity {
         nombreET.setEnabled(false);
         apellidoET.setEnabled(false);
 
-        Intent intent1 = getIntent();
+        Intent intent2 = getIntent();
 
-        String obtenerNombre = intent1.getStringExtra("Nombre");
-        String obtenerApellido = intent1.getStringExtra("Apellido");
+        String obtenerNombre = intent2.getStringExtra("NombreAct2");
+        String obtenerApellido = intent2.getStringExtra("ApellidoAct2");
 
         nombreET.setText(obtenerNombre);
         apellidoET.setText(obtenerApellido);

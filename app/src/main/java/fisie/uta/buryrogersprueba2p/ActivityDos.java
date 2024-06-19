@@ -56,11 +56,11 @@ public class ActivityDos extends AppCompatActivity {
                 String obtenerDivisor = divisorET.getText().toString();
                 String obtenerNumero = numeroET.getText().toString();
 
-                intent.putExtra("Nombre", obtenerNombre);
-                intent.putExtra("Apellido", obtenerApellido);
-                intent.putExtra("Dividendo", obtenerDividendo);
-                intent.putExtra("Divisor", obtenerDivisor);
-                intent.putExtra("Numero", obtenerNumero);
+                intent.putExtra("NombreAct2", obtenerNombre);
+                intent.putExtra("ApellidoAct2", obtenerApellido);
+                intent.putExtra("DividendoAct2", obtenerDividendo);
+                intent.putExtra("DivisorAct2", obtenerDivisor);
+                intent.putExtra("NumeroAct2", obtenerNumero);
 
                 startActivity(intent);
 
@@ -72,7 +72,7 @@ public class ActivityDos extends AppCompatActivity {
         cerrarBttn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(ActivityDos.this, MainActivity.class);
                 String obtenerNombre = nombreET.getText().toString();
                 String obtenerApellido = apellidoET.getText().toString();
                 String obtenerDividendo = dividendoET.getText().toString();
@@ -82,16 +82,18 @@ public class ActivityDos extends AppCompatActivity {
 
                 if (!obtenerNombre.isEmpty() || !obtenerApellido.isEmpty() || !obtenerDividendo.isEmpty() ||
                         !obtenerDivisor.isEmpty() || !obtenerNumero.isEmpty()) {
-                    Intent intent = new Intent(ActivityDos.this, MainActivity.class);
+
                     String numeroInvertido = new StringBuilder(obtenerNumero).reverse().toString();
 
-                    intent.putExtra("Nombre", obtenerNombre);
-                    intent.putExtra("Apellido", obtenerApellido);
-                    intent.putExtra("Dividendo", obtenerDividendo);
-                    intent.putExtra("Divisor", obtenerDivisor);
-                    intent.putExtra("NumeroInvertido", numeroInvertido);
-                    startActivity(intent);
+                    intent.putExtra("NombreAct2", obtenerNombre);
+                    intent.putExtra("ApellidoAct2", obtenerApellido);
+                    intent.putExtra("DividendoAct2", obtenerDividendo);
+                    intent.putExtra("DivisorAct2", obtenerDivisor);
+                    intent.putExtra("NumeroInvertidoAct2", numeroInvertido);
+
                 }
+
+                startActivity(intent);
             }
         });
     }
@@ -105,8 +107,20 @@ public class ActivityDos extends AppCompatActivity {
 
 
     public void mostrarValores(){
-        Intent intent = new Intent();
-        String obtenerNombre = intent.getStringExtra("NombreAct3");
+        Intent intent3 = new Intent();
+        String obtenerNombre = intent3.getStringExtra("NombreAct3");
         nombreET.setText(obtenerNombre);
+
+        String obtenerApellido = intent3.getStringExtra("ApellidoAct3");
+        apellidoET.setText(obtenerApellido);
+
+        String obtenerDividendo = intent3.getStringExtra("DividendoAct3");
+        dividendoET.setText(obtenerDividendo);
+
+        String obtenerDivisor = intent3.getStringExtra("DivisorAct3");
+        divisorET.setText(obtenerDivisor);
+
+        String obtenerNumero = intent3.getStringExtra("NumeroInvertidoAct3");
+        numeroET.setText(obtenerNumero);
     }
 }

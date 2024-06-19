@@ -52,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         MainActivity.this, ActivityDos.class);
 
-                String obetenerNombre = nombreET.getText().toString();
+                String obtenerNombre = nombreET.getText().toString();
                 String obtenerApellido = apellidoET.getText().toString();
 
-                intent.putExtra("Nombre", obetenerNombre);
-                intent.putExtra("Apellido", obtenerApellido);
+                intent.putExtra("NombreAct1", obtenerNombre);
+                intent.putExtra("ApellidoAct1", obtenerApellido);
+
 
                 startActivity(intent);
             }
@@ -68,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int dividendo = Integer.parseInt(dividendoET.getText().toString());
                 int divisorInt = Integer.parseInt(divisorET.getText().toString());
-                String numeroInvertido = getIntent().getStringExtra("NumInvertido");
+                String numeroInvertido = getIntent().getStringExtra("NumeroInvertidoAct3");
+
+
                 EditText editTextInvertido = findViewById(R.id.editTextNumInveAct1);
                 editTextInvertido.setText(numeroInvertido);
 
@@ -110,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
         parEnteraET.setEnabled(false);
         residuoET.setEnabled(false);
     }
+
+
+    public void MostrarDatos3(){
+
+    }
+
+
+
+
 
 
 }
